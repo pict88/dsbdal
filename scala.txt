@@ -1,0 +1,51 @@
+object factorial extends App {
+  def factorial (num :Int): 
+    Int= if (num<=1) 1 else num * factorial (num-1)
+  val num=5
+  println(s"$num is ${factorial(num)}")
+}
+
+--------------------------------------------
+
+import scala.io.StdIn.readInt
+
+object factorial extends App {
+  println("Enter a number:")
+
+  // This line waits for the user to provide a number
+  val num = readInt() 
+
+  def calculate(n: Int): Int = 
+    if (n <= 1) 1 else n * calculate(n - 1)
+
+  println(s"Factorial of $num is ${calculate(num)}")
+}
+
+----------------------------------------------
+
+object factorial extends App {
+  val num = 5
+  // (1 to 5).product = 1 * 2 * 3 * 4 * 5
+  println(s"Factorial of $num is ${(1 to num).product}")
+}
+
+-------------------------------------------------
+
+object BubbleSortExample extends App {
+  def bubbleSort(arr: Array[Int]): Array[Int] = {
+    for (i <- arr.indices; j <- 0 until arr.length - i - 1) {
+      if (arr(j) > arr(j + 1)) {
+        val tmp = arr(j); arr(j) = arr(j + 1); arr(j + 1) = tmp
+      }
+    }
+    arr
+  }
+
+  val nums = Array(5, 1, 4, 2, 8)
+  println("Sorted: " + bubbleSort(nums).mkString(", "))
+}
+
+-------------------------------------------------
+
+scalac <file>.scala
+scala <file> #can be capital select teh one with .class
